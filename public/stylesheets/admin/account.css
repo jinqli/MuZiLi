@@ -1,0 +1,128 @@
+/* account */
+* {
+  margin: 0;
+  padding: 0;
+}
+.hide {
+  display: none !important;
+  transition: 0.5s all unset;
+}
+input {
+  margin-bottom: 20px;
+}
+h1 {
+  margin: 40px 0;
+}
+.mobile_wrap {
+  display: none;
+}
+.account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.account .pc_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #abcdef;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px #00000010;
+  overflow: hidden;
+}
+.account .pc_wrap .box_left_img {
+  width: 360px;
+  height: 440px;
+  background-image: url("https://desk-fd.zol-img.com.cn/t_s1024x768c5/g5/M00/0D/09/ChMkJ1wnTKyIDXWIAAe1idP6iVIAAuETwAEVHkAB7Wh541.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s all unset;
+}
+.account .box_left,
+.box_right {
+  width: 360px;
+  height: 440px;
+}
+.account .box_left {
+  border-right: 0.5px solid #abcdef;
+}
+.account .box_right {
+  border-left: 0.5px solid #abcdef;
+}
+.account .box_left .signup {
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+/* box_right */
+.account .box_right .box_right_img {
+  width: 360px;
+  height: 440px;
+  background-image: url("https://desk-fd.zol-img.com.cn/t_s1024x768c5/g5/M00/0C/05/ChMkJl4dNbmIS-1MAAYHKJ-tub0AAwWXACrfHkABgdA472.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.account .box_right .signin {
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.account .box_right .signin .form_wrap,
+.form_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/*  */
+@media screen and (max-width: 700px) {
+  .pc_wrap {
+    display: none !important;
+  }
+  .mobile_wrap {
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    padding: 0;
+    display: block !important;
+  }
+}
+.mobile_wrap .mobile_signup,
+.mobile_signin {
+  height: 440px;
+  text-align: center;
+}
+.mobile_wrap .mobile_form_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* iPad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /*  */
+}
+/* iPhone */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  /*  */
+}
+/* ========================= */
+.global_header_title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+}

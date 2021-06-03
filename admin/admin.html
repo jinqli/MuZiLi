@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- css -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/public/stylesheets/admin.css" rel="stylesheet" />
+    <!-- echarts -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo_content">
+        <div class="logo">
+          <i class="bx bxl-c-plus-plus"></i>
+          <div class="logo_name"></div>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="/admin/admin.html">
+            <i class="bx bx-grid-alt">
+              <span class="links_name">Dashboard</span>
+            </i>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="/admin/articles">
+            <i class="bx bxs-book-alt">
+              <span class="links_name">articles</span>
+            </i>
+          </a>
+          <span class="tooltip">articles</span>
+        </li>
+        <li>
+          <a href="/admin/categories">
+            <i class="bx bxs-category-alt">
+              <span class="links_name">categories</span>
+            </i>
+          </a>
+          <span class="tooltip">categories</span>
+        </li>
+        <li>
+          <a href="/admin/account">
+            <i class="bx bxs-user-account">
+              <span class="links_name">account</span>
+            </i>
+          </a>
+          <span class="tooltip">account</span>
+        </li>
+        <li>
+          <a href="admin/setting">
+            <i class="bx bx-badge">
+              <span class="links_name">setting</span>
+            </i>
+          </a>
+          <span class="tooltip">setting</span>
+        </li>
+      </ul>
+      <div class="profile_content">
+        <div class="profile">
+          <div class="profile_details">
+            <div class="name_job">
+              <div class="name">木子李</div>
+              <div class="job">十年之约</div>
+            </div>
+            <i class="bx bx-log-out" id="log_out"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="admin_container">
+      <header class="admin_container_header">
+        <p>调用网易热评api</p>
+        <div class="profile_wrap" id="profile">
+          <div class="avatar" id="avatar">
+            <img src="" alt="" />
+            <div class="username">ljq</div>
+            <i class="x bx-caret-down" style="font-size: 28px; color: #fff"></i>
+          </div>
+        </div>
+        <div class="href hide">
+          <a href="/index.html">网站</a>
+          <a href="#">退出</a>
+        </div>
+      </header>
+        <div class="dashboard">
+        <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+        <div
+          id="main"
+          calss="article"
+          style="width: 600px; height: 400px"
+          )
+        ></div>
+        <div
+          id="main_2"
+          calss="article"
+          style="width: 600px; height: 400px"
+        ></div>
+        <div id="website_time_link" class="website_time_link"></div>
+      </div>
+      <footer class="footer">
+        <p>Powered by Copyright © 一 叶 知 秋 2020 - 2021 版权所有</p>
+      </footer>
+    </div>
+    <!-- javascript -->
+    <script src="/public/javascripts/admin.js"></script>
+  </body>
+</html>

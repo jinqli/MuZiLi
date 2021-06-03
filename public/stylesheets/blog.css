@@ -1,0 +1,55 @@
+/* rgb(237, 239, 241) */
+/* ----------------banner--------------------- */
+.banner {
+  width: 1280px;
+  height: 400px;
+  margin: 40px auto;
+}
+.banner .bg_img {
+  display: block;
+  height: 400px;
+  background: url("https://desk-fd.zol-img.com.cn/t_s208x130c5/g6/M00/0A/09/ChMkKWBZwy2Ie3opAGJPNTmuTzcAAL8mQAAAAAAYk9N755.jpg");
+}
+.banner .banner_wrap {
+  width: 100%;
+  background-color: #fff;
+}
+/* blog */
+.container .blog {
+  padding: 20px 0;
+}
+.container .blog .blog_info {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+.container .blog_card_list {
+  margin: 40px 0;
+}
+.container .blog_card_list .item {
+  width: 400px;
+  height: 230px;
+  float: left;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 8px;
+}
+.blog_card_list .item img {
+  display: none;
+}
+.blog_card_list .item .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.blog_card_list .info .title {
+  font-size: 18px;
+  font-weight: 200;
+}
+.blog_card_list .info .content {
+  display: none;
+}
+.blog_card_list .info .description {
+  font-size: 14px;
+}

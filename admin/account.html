@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>account</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/public/stylesheets/admin/account.css" />
+  </head>
+  <body>
+    <div class="container account">
+      <div class="pc_wrap">
+        <div class="box_left">
+          <div class="box_left_img" id="box_left_img"></div>
+          <div class="signup nodisplay">
+            <h1>register</h1>
+            <div class="form_wrap">
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Username"
+              />
+              <input type="email" name="email" id="email" placeholder="Email" />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+              />
+              <input
+                type="password"
+                name="username"
+                id="confirm_password"
+                placeholder="Confirm Password"
+              />
+              <button class="button submit" id="submit">Create Account</button>
+            </div>
+          </div>
+        </div>
+        <div class="box_right">
+          <!-- img -->
+          <div class="box_right_img hide" id="box_right_img">
+            <div class="info">孑然一身</div>
+            <div class="link_info">
+              <span>已有账户，立即</span
+              ><button class="have_login" id="have_login">登录</button>
+            </div>
+          </div>
+          <!-- ///////////////////// -->
+          <div class="signin">
+            <h1>sign in</h1>
+            <div class="form_wrap">
+              <input
+                type="text"
+                name="username"
+                id="signin_username"
+                placeholder="Username"
+              />
+              <input
+                type="email"
+                name="email"
+                id="signin_email"
+                placeholder="Email"
+              />
+              <input
+                type="password"
+                name="password"
+                id="signin_password"
+                placeholder="Password"
+              />
+              <div class="btn_group">
+                <button class="button submit" id="submit_login">登录</button>
+                <button class="link_register" id="link_register">注册</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 移动端 -->
+      <div class="mobile_wrap">
+        <div class="mobile_signup hide">
+          <h1>register</h1>
+          <div class="mobile_form_wrap">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+            />
+            <input type="email" name="email" id="email" placeholder="Email" />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+            <input
+              type="password"
+              name="username"
+              id="confirm_password"
+              placeholder="Confirm Password"
+            />
+            <button class="button submit" id="submit">Create Account</button>
+            <div>
+              已有账户,立即
+              <span id="mobile_signin" style="cursor: pointer">登录</span>
+            </div>
+          </div>
+        </div>
+        <!-- signin -->
+        <div class="mobile_signin">
+          <h1>sign in</h1>
+          <div class="mobile_form_wrap">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+            />
+            <input
+              type="email"
+              name="email"
+              id="mobile_email"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              name="password"
+              id="mobile_password"
+              placeholder="Password"
+            />
+            <div class="btn_group">
+              <button class="button submit" id="submit">登录</button>
+              <button class="link_register" id="link_register">注册</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="global_header_title" id="global_header_title"></div>
+    </div>
+    <!-- js -->
+    <script>
+      /*
+        1. 获取DOM节点
+        2. boolean型操作
+      */
+      function _(el) {
+        return document.getElementById(el);
+      }
+
+      const linkRegister = _("link_register"); // 注册按钮
+      const haveLogin = _("have_login"); // 已有账户，立即登录
+      const boxLeftImg = _("box_left_img"); // 左边图片盒子，改变clss让她隐藏或者显示
+      const boxRightImg = _("box_right_img"); // 右边盒子
+
+      // 绑定事件
+      linkRegister.addEventListener("click", () => {
+        boxLeftImg.className = "box_left_img hide";
+        boxRightImg.className = "box_right_img";
+      });
+      haveLogin.addEventListener("click", () => {
+        boxLeftImg.className = "box_left_img";
+        boxRightImg.className = "box_left_img hide";
+      });
+      document.title = "register or sing in";
+
+      // ----------------------------------------------
+
+      /*
+      Ajax是基于现有的Internet标准，并且联合他们使用，XMLHttpRequest 对象(异步的与服务器交换数据)
+      借鉴Jquery
+      由于涉及到同源策略，所以采用跨域 jsonp
+      主要利用script标签的src没有跨域限制来完成的
+      */
+      // 封装 jsonp 只能get请求
+      const jsonpCallback = function (res) {};
+
+      // 封装Ajax GET
+
+      function Ajax(method, url, data) {
+        var xmlHttp;
+        if (window.XMLHttpRequest) {
+          // ie7+,Firefox,Chrome,Opera,Safari
+          xmlHttp = new XMLHttpRequest();
+        } else {
+          // IE6, IE5
+          xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlHttp.onreadystatechange = function () {
+          if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            // document.getElementById("global_header_title").innerHTML =
+            //   JSON.parse(xmlHttp.responseText).content[0].split("<\/br>")[1];
+            // document.getElementById("global_header_title").innerHTML =
+            //   JSON.parse(xmlHttp.responseText).content;
+            console.log(xmlHttp.responseText);
+          }
+        };
+        // open url
+        xmlHttp.open(method, url, true);
+        // send
+        if (method === "POST") {
+          xmlHttp.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+          );
+          xmlHttp.send();
+        } else {
+          xmlHttp.send();
+        }
+      }
+
+      const url = [
+        "https://cdn.ipayy.net/wangyy/api.php?encode=json",
+        "https://api.julym.com/163/rand.php?id=2223747711",
+      ];
+      Ajax("GET", url[0]);
+
+      /* 注册
+        1. 获取页面数据，
+        2. 通过Ajax发送给服务端
+        3. 通过返回值显示登录，隐藏注册
+      */
+      const accountData = {
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      };
+
+      const onChaneInput = (el) => {
+        el.addEventListener("change", () => {
+          accountData.el = el.value;
+        });
+      };
+      let username = _("username");
+      onChaneInput(username);
+
+      let email = _("email");
+      onChaneInput(email);
+
+      let password = _("password");
+      onChaneInput(password);
+
+      let confirmPassword = _("confirm_password");
+      onChaneInput(confirmPassword);
+
+      let submit = _("submit");
+      submit.addEventListener("click", () => {
+        // console.log(accountData);
+        // Ajax(
+        //   "POST",
+        //   "http://127.0.0.1:3000/api/users/",
+        //   "username=ljq&pasword=123"
+        // );
+        Ajax("GET", "http://127.0.0.1:3000/api/users/");
+      });
+
+      function createXMLHttp() {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+          // code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp = new XMLHttpRequest();
+        } else {
+          // code for IE6, IE5
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        return xmlhttp;
+      }
+
+      document.getElementById("submit_login").onclick = function () {
+        // 1. 创建一个xmlhttpRequest对象
+        var xmlHttp = createXMLHttp();
+
+        // 2. 设置回调监听
+        xmlHttp.onreadystatechange = function () {
+          if (4 === xmlHttp.readyState && 200 === xmlHttp.status) {
+            //局部刷新
+            console.log(xmlHttp.responseText);
+          }
+        };
+
+        // 3. 打开一个连接
+        xmlHttp.open("POST", "http://127.0.0.1:3000/api/register");
+
+        // 4. 设置请求头
+        xmlHttp.setRequestHeader(
+          "Content-type",
+          // "application/x-www-form-urlencoded"
+          "application/json"
+        );
+
+        let data = {
+          username: "ljq",
+          email: "ljqrongyao@outlook.com",
+          password: "123",
+        };
+
+        // 5. 发送
+        xmlHttp.send(JSON.stringify(data)); //请求体body，用&分隔。引用：req.body.name
+        // insert into users (username,email,password) values ("ljq","ljqrongyao@outlook.com","123");
+      };
+
+      /*
+        1. 获取页面数据
+        2. 发给服务端
+        3. 根据返回值做下一步操作
+      */
+    </script>
+  </body>
+</html>

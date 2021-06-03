@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>孑然一身</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./public/stylesheets/base.css" />
+    <link rel="stylesheet" href="./public/stylesheets/blog.css" />
+    <!-- js -->
+  </head>
+  <body>
+    <div class="header">
+      <h2><a href="/index.html">木子李</a></h2>
+      <nav class="header_nav" id="header">
+        <span class="initial_a"><span>我的圈子</span></span>
+        <ul class="hide" id="menu_li">
+          <li><a href="">工具篇</a></li>
+          <li><a href="">工具篇</a></li>
+          <li><a href="">工具篇</a></li>
+        </ul>
+        <div class="menu_btn" id="menu_btn">MENU</div>
+      </nav>
+      <div class="search">
+        <input type="search" name="q" placeholder="Search" />
+      </div>
+      <nav class="header_nav_right">
+        <a href="">首页</a>
+        <a href="">归档</a>
+        <a href="">关于</a>
+        <a href="">留言</a>
+      </nav>
+      <div class="header_user_dropdown">
+        <a href="/admin/account.html">sing in</a>
+        <a href="/admin/admin.html">admin</a>
+        <a href="">log out</a>
+      </div>
+    </div>
+    <div style="height: 49px"></div>
+    <!-- --------------------------banner -->
+    <div class="banner">
+      <span class="bg_img"></span>
+      <div class="banner_wrap">
+        <div class="logo"></div>
+        <div class="website_name"></div>
+      </div>
+    </div>
+    <!-- //////////////////////// -->
+    <div class="container">
+      <div class="blog">
+        <div class="blog_info">
+          <!-- <h3 class="blog_info_title">blog</h3> -->
+          <p class="blog_info_content">
+            爱会消失，对吧？不会，会转移 <sub>-----网易热评</sub>
+          </p>
+        </div>
+        <div class="blog_card_list" id="blog_card_list">
+          <!-- 分两种情况，有img和没有img -->
+          <!--  -->
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <!-- js -->
+    <script src="./public/javascripts/footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      /*
+        1. 请求服务端数据
+        2. 遍历生成节点
+        3. 渲染到页面
+      */
+      const blogData = [
+        {
+          title: "打平数组JS",
+          content: "# Marked in browser\n\nRendered by **marked**.",
+          description: "description",
+        },
+        {
+          title: "打平数组JS",
+          content: "# Marked in browser\n\nRendered by **marked**.",
+          description: "description",
+        },
+        {
+          title: "打平数组JS",
+          content: "# Marked in browser\n\nRendered by **marked**.",
+          description: "description",
+        },
+        {
+          title: "打平数组JS",
+          content: "# Marked in browser\n\nRendered by **marked**.",
+          description: "description",
+        },
+      ];
+      const blogCardList = document.getElementById("blog_card_list");
+      /*
+        通过js操作DOM
+        1. 创建DOM
+        2. 插入
+      */
+      blogData.forEach((item) => {
+        const blogCardItem = document.createElement("div");
+        blogCardItem.className = "item";
+        const blogCardItemImg = document.createElement("img");
+        blogCardItemImg.src = "";
+        blogCardItemImg.alt = "img";
+        const blogCardItemInfo = document.createElement("div");
+        blogCardItemInfo.className = "info";
+        const blogCardInfoTitle = document.createElement("h3");
+        blogCardInfoTitle.className = "title";
+        blogCardInfoTitle.innerHTML = item.title;
+        const blogCardInfoContent = document.createElement("p");
+        blogCardInfoContent.className = "content";
+        blogCardInfoContent.id = "content";
+        blogCardInfoContent.innerHTML = marked(item.content);
+        const blogCardInfoDescription = document.createElement("span");
+        blogCardInfoDescription.className = "description";
+        blogCardInfoDescription.id = "description";
+        blogCardInfoDescription.innerHTML = item.description;
+
+        blogCardItemInfo.appendChild(blogCardInfoTitle);
+        blogCardItemInfo.appendChild(blogCardInfoContent);
+        blogCardItemInfo.appendChild(blogCardInfoDescription);
+
+        blogCardItem.appendChild(blogCardItemImg);
+        blogCardItem.appendChild(blogCardItemInfo);
+
+        blogCardList.appendChild(blogCardItem);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.sidebar {
+  height: 100%;
+  width: 78px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #11101d;
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+}
+.sidebar.active {
+  width: 240px;
+}
+.sidebar .logo_content .logo {
+  color: #fff;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar.active .logo_content .logo {
+  opacity: 1;
+  pointer-events: none;
+}
+.sidebar .logo_content .logo i {
+  font-size: 28px;
+  margin-right: 5px;
+}
+.sidebar .logo_content .logo logo_name {
+  font-size: 20px;
+  font-weight: 400;
+}
+.sidebar #btn {
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translate(-50%);
+}
+.sidebar.active #btn {
+  left: 90%;
+}
+.sidebar ul {
+  margin-top: 20px;
+}
+.sidebar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  border-radius: 12px;
+  list-style: none;
+  line-height: 50px;
+}
+.sidebar.active ul li {
+  margin: 0 5px;
+}
+.sidebar ul li .tooltip {
+  position: absolute;
+  left: 66px;
+  top: 0;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 122px;
+  background-color: #fff;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.sidebar.active ul li .tooltip {
+  display: block;
+}
+.sidebar ul li:hover .tooltip {
+  z-index: 10;
+  transition: all 0.5s ease;
+  opacity: 1;
+  top: 50%;
+}
+.sidebar.active ul li:hover .tooltip {
+  transition: all 0.5s ease;
+  opacity: 0;
+  top: 50%;
+}
+.sidebar ul li a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.sidebar ul li a:hover {
+  color: #11101d;
+  border-radius: 12px;
+  background-color: #fff;
+}
+.sidebar ul li a i {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+.sidebar .links_name {
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar.active .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar .profile_content {
+  width: 100%;
+  position: absolute;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+}
+.sidebar .profile_content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background-color: #1d1b31;
+}
+.sidebar .profile_content .profile .profile_details {
+  display: flex;
+  align-items: center;
+}
+.profile .profile_details img {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.profile .profile_details .name_job {
+  margin-left: 10px;
+  opacity: 0;
+}
+.sidebar.active .profile .profile_details .name_job {
+  opacity: 1;
+}
+.profile .profile_details .name_job .name {
+  font-size: 15px;
+  font-weight: 400;
+}
+.profile .profile_details .name_job .job {
+  font-size: 12px;
+}
+.profile #log_out {
+  position: absolute;
+  left: 66%;
+  bottom: 5px;
+  transform: translate(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 12px;
+}
+.sidebar.active .profile #log_out {
+  left: 88%;
+}
+/* ---------------------admin_container-------------- */
+.admin_container {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 78px;
+  transition: all 0.5s ease;
+  overflow: auto;
+}
+.sidebar.active ~ .admin_container {
+  width: calc(100% - 240px);
+  left: 240px;
+}
+/* ------------------------admin_container_header--------- */
+.admin_container_header {
+  height: 50px;
+  background-color: #1d1b3190;
+}
+.admin_container_header p {
+  color: #fff;
+  float: left;
+  line-height: 50px;
+  margin-left: 48px;
+}
+.admin_container_header .profile_wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+.admin_container_header .profile_wrap .avatar {
+  display: flex;
+  padding: 0 20px;
+  min-width: 177.16px;
+  height: 46px;
+  margin: 2px 0;
+  background-color: #11101d40;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+}
+.admin_container_header .profile_wrap .avatar img {
+  height: 44px;
+  width: 44px;
+  border-radius: 22px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+.admin_container_header .profile_wrap .avatar .username {
+  padding: 0 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+  color: #fff;
+  cursor: pointer;
+}
+.admin_container_header .profile_wrap .avatar i {
+  cursor: pointer;
+}
+.admin_container_header .href {
+  min-width: 177.16px;
+  background-color: #11101d40;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 12px;
+}
+.admin_container_header .href a {
+  display: block;
+  font-size: 18px;
+  padding: 10px 0;
+  color: #fff;
+}
+.admin_container_header .href a:hover {
+  background-color: #fff;
+  border-radius: 12px;
+  color: #000;
+}
+/* ---------------------footer---------------------- */
+.admin_container .footer {
+  height: 60px;
+  background-color: #1d1b31;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  font-size: 14px;
+}
+/* ---------------all------------------ */
+.admin_container .dashboard,
+.admin_container .article__list,
+.admin_container .category__list,
+.admin_container .account__list,
+.admin_container .article__form {
+  width: 100%;
+  min-height: 800px;
+  padding: 24px;
+}
+/* -----------dashboard--------------- */
+.admin_container .dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* -----------article__list--------------- */
+.admin_container .article__list {
+  width: 100%;
+  min-height: 800px;
+}
+/* --------------category__list------------ */
+.admin_container .category__list {
+  width: 100%;
+  min-height: 800px;
+}
+/* -----------account__list--------------- */
+.admin_container .account__list {
+  width: 100%;
+  min-height: 800px;
+}
+
+/*  */

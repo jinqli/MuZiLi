@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+.container .home_box_wrap {
+  height: 400px;
+  margin: 40px 0;
+  background-color: #00000010;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home_box_wrap .left {
+  width: 50%;
+}
+.home_box_wrap .right a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 0.5px solid #abcdef;
+  margin: 15px 0;
+}
+.btn_info {
+  /* position: absolute;
+  top: 90%;
+  left: 50%; */
+}
+
+/* home_detail_1 */
+.home_detail_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.home_detail_1 .home_detail_title {
+  width: 20px;
+  padding: 15px 20px;
+  border-radius: 4px;
+  background-color: #abcdef;
+  line-height: 24px;
+  font-size: 20px;
+}
+.home_detail_1 .home_detail_content {
+  padding: 20px;
+}
+.home_detail_3 {
+  margin: 80px 0;
+}
+
+/* home_info_item */
+.container .home_info_item {
+  padding: 40px 100px;
+  margin-bottom: 80px;
+  border-bottom: 1px solid #ccc;
+}
+.home_info_item .home_info_item_title {
+  color: #ccc;
+  font-size: 18px;
+  font-weight: 300;
+}
+.home_info_grad {
+  width: 900px;
+  height: 600px;
+  margin: 40px auto;
+}
+.home_info_grad .item {
+  width: 300px;
+  height: 200px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #abcdef;
+}
+.home_info_grad .item:nth-child(5) {
+  background-color: #fff;
+}
+.home_info_grad .item:nth-child(1) {
+  background-color: #fff;
+}
+.home_info_grad .item:nth-child(3) {
+  background-color: #fff;
+}
+.home_info_grad .item:nth-child(7) {
+  background-color: #fff;
+}
+.home_info_grad .item:nth-child(9) {
+  background-color: #fff;
+}
+.home_info_grad .item .info {
+  font-size: 18px;
+  font-weight: 100;
+}
+/* home_tool_item */
+.home_tool_item {
+  padding: 40px 60px;
+  border-bottom: 1px solid #ccc;
+}
+.home_tool_item .home_tool_title {
+  font-size: 18px;
+  font-weight: 200;
+  color: #888;
+}
+.home_tool_grid {
+  width: 1000px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+.home_tool_grid .item {
+  width: 230px;
+  height: 400px;
+  margin: 0 10px;
+  border-radius: 8px;
+  background-color: #ffffff80;
+  float: left;
+}

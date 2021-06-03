@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>孑然一身</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./public/stylesheets/base.css" />
+    <link rel="stylesheet" href="./public/stylesheets/detail.css" />
+    <!-- js -->
+  </head>
+  <body>
+    <div class="header">
+      <h2>木子李</h2>
+      <nav class="header_nav" id="header">
+        <span class="initial_a"><span>我的圈子</span></span>
+        <ul class="hide" id="menu_li">
+          <li><a href="">工具篇</a></li>
+          <li><a href="">工具篇</a></li>
+          <li><a href="">工具篇</a></li>
+        </ul>
+        <div class="menu_btn" id="menu_btn">MENU</div>
+      </nav>
+      <div class="search">
+        <input type="search" name="q" placeholder="Search" />
+      </div>
+      <nav class="header_nav_right">
+        <a href="">首页</a>
+        <a href="">归档</a>
+        <a href="">关于</a>
+        <a href="">留言</a>
+      </nav>
+      <div class="header_user_dropdown">
+        <a href="/admin/account.html">sing in</a>
+        <a href="/admin/admin.html">admin</a>
+        <a href="">log out</a>
+      </div>
+    </div>
+    <div class="banner">
+      <span class="bg_img"></span>
+      <div class="banner_wrap">
+        <div class="logo"></div>
+        <div class="website_name"></div>
+      </div>
+    </div>
+    <div class="container"></div>
+    <!-- footer -->
+    <!-- js -->
+    <script src="./public/javascripts/footer.js"></script>
+    <script>
+      let content = `### web渗透-DVWA搭建
+
+---
+
+> DVWA：一款练习渗透的靶机，适合新手入门，比较万丈高楼平地起。
+>
+> 环境：因为web渗透，所以肯定需要web环境
+>
+> - 我这使用的集成环境phpstudy——pro
+> - 也可以自己搭建，这样学得更多，看个人时间和精力
+
+---
+
+
+
+1. 安装集成环境
+
+   ![](D:\Users\ljq\Pictures\Camera Roll\phpstudy_pro.png)
+
+
+
+2. 安装DVWA
+
+   [GitHub - digininja/DVWA: Damn Vulnerable Web Application (DVWA)](https://github.com/digininja/DVWA)
+
+   - 通过git克隆到本地
+
+     ![](D:\Users\ljq\Pictures\Camera Roll\git-dvwa.png)
+
+   - 直接download
+
+     ![](D:\Users\ljq\Pictures\Camera Roll\download-dvwa.png)
+
+
+
+3. 把下载好的文件放在phpstudy下的www目录下
+
+   ![](D:\Users\ljq\Pictures\Camera Roll\path.png)
+
+4. 配置DVWA数据库配置文件，请打开config文件夹，打开config.inc.php。
+
+   > # 修改如下内容，把数据库用户和密码改成你的mysql数据库的用户名和密码
+   >
+   > $_DVWA = **array**();
+   >
+   > $_DVWA[ 'db_server' ]  = '127.0.0.1';
+   >
+   > $_DVWA[ 'db_database' ] = 'dvwa';
+   >
+   > $_DVWA[ 'db_user' ]   = 'root';
+   >
+   > $_DVWA[ 'db_password' ] = 'root';
+   >
+   > $_DVWA[ 'db_port'] = '3306';
+
+5. 打开浏览器（推荐火狐）在url栏输入本机127.0.0.1/DVWA/index.php
+
+   > 记得把phpstudy打开
+   >
+
+6. 最后Setup DVWA配置数据库文件就ok了，点击页面底下的Create  / Reset Database
+
+   ![](D:\Users\ljq\Pictures\Camera Roll\DVWA-setup.png)
+
+7. 成功之后就会跳转到登录页面然后登录即可。
+
+   > 默认用户名 admin， 默认密码 password
+
+---
+
+> 未完待续...
+>
+> 此间只是环境的搭建，后期会把这靶机做一遍，并把过程和心得记录下来。
+>
+> 学习，不只是兴趣，还有那遥不可及的你。
+>
+> docker run --rm -it -p 80:80 citizenstig/dvwa`;
+    </script>
+  </body>
+</html>
